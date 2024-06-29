@@ -46,20 +46,31 @@
 
     <script>
         function giveActionResult(action) {
-            const inputElement = document.getElementById("input-text");
-            const resultElement = document.getElementById("result-text");
+            const inputVal = document.getElementById("input-text").value
+            const resultTarget = document.getElementById("result-text")
 
-            const inputVal = inputElement.value
-            const resultTarget = resultElement.innerText
+            // if (action == 'uppercase')
+            //     resultTarget = inputVal.toUpperCase()
+            // else if (action == 'lowercase')
+            //     resultTarget = inputVal.toLowerCase()
+            // else if (action == 'charcount')
+            //     resultTarget = `Total Characters: ${inputVal.length}`
+            // else
+            //     resultTarget = `Total Words: ${inputVal.split(" ").length}`
 
-            if (action == 'uppercase')
-                resultTarget = inputVal.toUpperCase()
-            else if (action == 'lowercase')
-                resultTarget = inputVal.toLowerCase()
-            else if (action == 'charcount')
-                resultTarget = `Total Characters: ${inputVal.length}`
-            else
-                resultTarget = `Total Words: ${inputVal.split(" ").length}`
+            switch(action) {
+                case 'uppercase':
+                    resultTarget.innerText = inputVal.toUpperCase()
+                    break;
+                case 'lowercase':
+                    resultTarget.innerText = inputVal.toLowerCase()
+                    break;
+                case 'charcount':
+                    resultTarget.innerText = `Total Characters: ${inputVal.length}`
+                    break
+                default:
+                    resultTarget.innerText = `Total Words: ${inputVal.split(" ").length}`
+            }
         }    
     </script>
 
