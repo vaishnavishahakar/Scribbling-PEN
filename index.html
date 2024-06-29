@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scribbling PEN</title>
+
+    <style>
+        .app-title{
+            text-align: center;
+        }
+        .input-text{
+            width: 70%;
+            margin: 20px auto;
+            display: block;
+            height: 100px;
+        }
+        .buttons-container{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1 class="app-title">Scribbling PEN</h1>
+    <input type="text" class="input-text" id="input-text" />
+    <p id="result-text"></p>
+
+    <div class="buttons-container">
+        <button class="action-btn">UPPER CASE</button>
+        <button class="action-btn">LOWER CASE</button>
+        <button class="action-btn">CHARACTER COUNT</button>
+        <button class="action-btn">WORD COUNT</button>
+    </div>
+
 </body>
 </html>
