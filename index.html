@@ -1,74 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scribbling PEN</title>
 
     <style>
-        .app-title{
+        .app-title {
             text-align: center;
         }
-        .input-text{
+
+        .input-text {
             width: 70%;
             margin: 10px auto;
             display: block;
             height: 100px;
         }
-        .result-text{
+
+        .result-text {
             width: 70%;
             margin: 10px auto;
             height: 100px;
             display: block;
         }
-        .buttons-container{
+
+        .buttons-container {
             display: flex;
             justify-content: space-around;
         }
     </style>
 </head>
+
 <body>
     <h1 class="app-title">Scribbling PEN</h1>
     <input type="text" class="input-text" id="input-text" />
     <p id="result-text" class="result-text"></p>
 
     <div class="buttons-container">
-        <button class="action-btn" onclick="makeUppercase()">UPPER CASE</button>
-        <button class="action-btn" onclick="makeLowercase()">LOWER CASE</button>
-        <button class="action-btn" onclick="charCount()">CHARACTER COUNT</button>
-        <button class="action-btn" onclick="wordCount()">WORD COUNT</button>
+        <button class="action-btn" onclick="giveActionResult('uppercase')">UPPER CASE</button>
+        <button class="action-btn" onclick="giveActionResult('lowercase')">LOWER CASE</button>
+        <button class="action-btn" onclick="giveActionResult('charcount')">CHARACTER COUNT</button>
+        <button class="action-btn" onclick="giveActionResult('wordcount')">WORD COUNT</button>
     </div>
 
     <script>
-        function makeUppercase()
-        {
+        function giveActionResult(action) {
             const inputElement = document.getElementById("input-text");
             const resultElement = document.getElementById("result-text");
 
-            resultElement.innerText = inputElement.value.toUpperCase()
-        }
-        function makeLowercase()
-        {
-            const inputElement = document.getElementById("input-text");
-            const resultElement = document.getElementById("result-text");
+            const inputVal = inputElement.value
+            const resultTarget = resultElement.innerText
 
-            resultElement.innerText = inputElement.value.toLowerCase()
-        }
-        function charCount()
-        {
-            const inputElement = document.getElementById("input-text");
-            const resultElement = document.getElementById("result-text");
-
-            resultElement.innerText = `Total Characters: ${inputElement.value.length}`
-            // resultElement.innerText = `Total Characters: ${inputElement.value.split(" ").length}`
-        }
-        function wordCount()
-        {
-            const inputElement = document.getElementById("input-text");
-            const resultElement = document.getElementById("result-text");
-
-            resultElement.innerText = `Total Words: ${inputElement.value.split(" ").length}`
-        }
+            if (action == 'uppercase')
+                resultTarget = inputVal.toUpperCase()
+            else if (action == 'lowercase')
+                resultTarget = inputVal.toLowerCase()
+            else if (action == 'charcount')
+                resultTarget = `Total Characters: ${inputVal.length}`
+            else
+                resultTarget = `Total Words: ${inputVal.split(" ").length}`
+        }    
     </script>
+
 </body>
+
 </html>
