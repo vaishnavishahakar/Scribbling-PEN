@@ -11,9 +11,15 @@
         }
         .input-text{
             width: 70%;
-            margin: 20px auto;
+            margin: 10px auto;
             display: block;
             height: 100px;
+        }
+        .result-text{
+            width: 70%;
+            margin: 10px auto;
+            height: 100px;
+            display: block;
         }
         .buttons-container{
             display: flex;
@@ -24,14 +30,23 @@
 <body>
     <h1 class="app-title">Scribbling PEN</h1>
     <input type="text" class="input-text" id="input-text" />
-    <p id="result-text"></p>
+    <p id="result-text" class="result-text"></p>
 
     <div class="buttons-container">
-        <button class="action-btn">UPPER CASE</button>
+        <button class="action-btn" onclick="makeUppercase()">UPPER CASE</button>
         <button class="action-btn">LOWER CASE</button>
         <button class="action-btn">CHARACTER COUNT</button>
         <button class="action-btn">WORD COUNT</button>
     </div>
 
+    <script>
+        function makeUppercase()
+        {
+            const inputElement = document.getElementById("input-text");
+            const resultElement = document.getElementById("result-text");
+
+            resultElement.innerText = inputElement.value.toUpperCase()
+        }
+    </script>
 </body>
 </html>
