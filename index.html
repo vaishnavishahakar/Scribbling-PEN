@@ -7,27 +7,50 @@
     <title>Scribbling PEN</title>
 
     <style>
+        body{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+        }
         .app-title {
             text-align: center;
+            margin-top: 50px;
+            font-style: italic;
+            text-decoration-style: wavy;
+            text-decoration-line: underline;
+            text-decoration-color: rgb(129, 30, 30);
         }
 
         .input-text {
             width: 70%;
             margin: 10px auto;
             display: block;
-            height: 100px;
+            height: 120px;
+            margin-top: 50px;
         }
 
         .result-text {
             width: 70%;
-            margin: 10px auto;
-            height: 100px;
+            margin: 20px auto;
+            height: 50px;
             display: block;
+            font-weight: bold;
         }
 
         .buttons-container {
             display: flex;
             justify-content: space-around;
+            height: 40px;
+        }
+
+        .action-btn{
+            border-radius: 10px;
+            border: none;
+            width: 170px;
+            font-weight: 600;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .action-btn:hover{
+            box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
         }
     </style>
 </head>
@@ -38,10 +61,10 @@
     <p id="result-text" class="result-text"></p>
 
     <div class="buttons-container">
-        <button class="action-btn" onclick="giveActionResult('uppercase')">UPPER CASE</button>
-        <button class="action-btn" onclick="giveActionResult('lowercase')">LOWER CASE</button>
-        <button class="action-btn" onclick="giveActionResult('charcount')">CHARACTER COUNT</button>
-        <button class="action-btn" onclick="giveActionResult('wordcount')">WORD COUNT</button>
+        <button class="action-btn" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);" onclick="giveActionResult('uppercase')">UPPER CASE</button>
+        <button class="action-btn" style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);" onclick="giveActionResult('lowercase')">LOWER CASE</button>
+        <button class="action-btn" style="background-image: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%);" onclick="giveActionResult('charcount')">CHARACTER COUNT</button>
+        <button class="action-btn" style="background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);" onclick="giveActionResult('wordcount')">WORD COUNT</button>
     </div>
 
     <script>
@@ -58,7 +81,7 @@
             // else
             //     resultTarget = `Total Words: ${inputVal.split(" ").length}`
 
-            switch(action) {
+            switch (action) {
                 case 'uppercase':
                     resultTarget.innerText = inputVal.toUpperCase()
                     break;
